@@ -12,4 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53a618e0d35eba458dc59e61d120253, type: 3}
   m_Name: CustomizationScriptable
   m_EditorClassIdentifier: 
-  pieces: []
+  pieces:
+  - name: Wizard Hat
+    price: 150
+    icon: {fileID: -1973996568, guid: 74e0011a4dc15d0499e9fe3977cbb891, type: 3}
+    animatorController: {fileID: 0}
+    pieceType: 3
+  - name: Hair
+    price: 50
+    icon: {fileID: 228140629, guid: 2a1c9b3decc3c0b4fa3b0abf3003d120, type: 3}
+    animatorController: {fileID: 0}
+    pieceType: 2
+  - name: Cloth
+    price: 100
+    icon: {fileID: -1291708082, guid: a2b08b705f6db784c8db419a35fdc71e, type: 3}
+    animatorController: {fileID: 0}
+    pieceType: 1
