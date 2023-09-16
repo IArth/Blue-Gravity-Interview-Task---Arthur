@@ -76,14 +76,21 @@ public class Player : MonoBehaviour
         if(input.x<0)dir=4;
         if(input.y>0)dir=0;
         if(input.y<0)dir=2;
-        characterAnimator.SetBool("Walking",input!=Vector2.zero);
-        if(input!=Vector2.zero)characterAnimator.SetFloat("Direction",dir);
+        bool walking=input!=Vector2.zero;
+        
+        characterAnimator.SetBool("Walking",walking);
+        if(walking)characterAnimator.SetFloat("Direction",dir);
         characterAnimator.SetFloat("Speed",movementSpeed);
+
+        clothAnimator.SetBool("Walking",walking);
+        if(walking)clothAnimator.SetFloat("Direction",dir);
+        clothAnimator.SetFloat("Speed",movementSpeed);
+
         //alternative script for animators array
         // for (int i = 0; i < animators.Length; i++)
         // {
-        //     animators[i].SetBool("Walking",input!=Vector2.zero);
-        //     if(input!=Vector2.zero)animators[i].SetFloat("Direction",dir);
+        //     animators[i].SetBool("Walking",walking);
+        //     if(walking)animators[i].SetFloat("Direction",dir);
         //     animators[i].SetFloat("Speed",movementSpeed);
         // }
     }
