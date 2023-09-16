@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     Animator characterAnimator,clothAnimator,hairAnimator,hatAnimator;//used separated Animators inteady of an array to be clear which is which
     // Animator[] animators;
+    public int coins{private set;get;}=100;
+    private HashSet<string> obtainedPieces=new HashSet<string>();
 #region Interactions - Made beforehand
     //interactable script made previously in a game jam
     List<IInteractable> interactables=new List<IInteractable>();
@@ -65,6 +67,9 @@ public class Player : MonoBehaviour
         }
         //animator[(int)type].runtimeAnimatorController=pieceAnimator;
     }
+    public void Obtain(string pieceName)=> obtainedPieces.Add(pieceName);
+    public bool Obtained(string pieceName)=>obtainedPieces.Contains(pieceName);
+    public void Spend(int amount)=>coins-=Mathf.Abs(amount);
     void Start()
     {
         
