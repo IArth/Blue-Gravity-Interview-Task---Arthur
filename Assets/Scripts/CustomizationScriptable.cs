@@ -20,6 +20,7 @@ namespace Customization
     public struct CustomPiece
     {
         public string name;
+        public int price;
         public Sprite icon;
         public RuntimeAnimatorController animatorController;
         public CustomType pieceType;
