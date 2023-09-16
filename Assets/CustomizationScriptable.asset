@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: CustomizationScriptable
   m_EditorClassIdentifier: 
   pieces:
-  - name: Wizard Hat
-    price: 150
-    icon: {fileID: -1973996568, guid: 74e0011a4dc15d0499e9fe3977cbb891, type: 3}
-    animatorController: {fileID: 0}
-    pieceType: 3
+  - name: Box
+    price: 0
+    icon: {fileID: 1307245812, guid: 14ddd7d4b0b157e4982574459f630b5e, type: 3}
+    animatorController: {fileID: 9100000, guid: 73f842103d7a93f49b22154f17c93eaa, type: 2}
+    pieceType: 1
   - name: Hair
     price: 50
     icon: {fileID: 228140629, guid: 2a1c9b3decc3c0b4fa3b0abf3003d120, type: 3}
