@@ -70,6 +70,24 @@ public class Player : MonoBehaviour
     public void Obtain(string pieceName)=> obtainedPieces.Add(pieceName);
     public bool Obtained(string pieceName)=>obtainedPieces.Contains(pieceName);
     public void Spend(int amount)=>coins-=Mathf.Abs(amount);
+    void Animate(Vector2 input){
+        int dir=0;
+        if(input.x>0)dir=1;
+        if(input.x<0)dir=4;
+        if(input.y>0)dir=0;
+        if(input.y<0)dir=2;
+        characterAnimator.SetBool("Walking",input!=Vector2.zero);
+        if(input!=Vector2.zero)characterAnimator.SetFloat("Direction",dir);
+        characterAnimator.SetFloat("Speed",movementSpeed);
+        //alternative script for animators array
+        // for (int i = 0; i < animators.Length; i++)
+        // {
+        //     animators[i].SetBool("Walking",input!=Vector2.zero);
+        //     if(input!=Vector2.zero)animators[i].SetFloat("Direction",dir);
+        //     animators[i].SetFloat("Speed",movementSpeed);
+        // }
+    }
+
     void Start()
     {
         
@@ -77,6 +95,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Vector2 inputs=new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
+        Animate(inputs);
         transform.Translate(inputs*movementSpeed*Time.deltaTime);
     }
 }
