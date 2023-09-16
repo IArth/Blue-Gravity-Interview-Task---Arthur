@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Customization;
 
 public class Player : MonoBehaviour
 {
     [SerializeField]
     private float movementSpeed=3;
-#region Made beforehand
+    [SerializeField]
+    Animator characterAnimator,clothAnimator,hairAnimator,hatAnimator;//used separated Animators inteady of an array to be clear which is which
+    // Animator[] animators;
+#region Interactions - Made beforehand
     //interactable script made previously in a game jam
     List<IInteractable> interactables=new List<IInteractable>();
     IInteractable interactable;
@@ -43,6 +47,24 @@ public class Player : MonoBehaviour
         }
     }
 #endregion
+    public void EquipPiece(CustomType type,RuntimeAnimatorController pieceAnimator){
+        switch (type)
+        {
+            case CustomType.Character:
+                //no base character customization implemented
+                break;
+            case CustomType.Cloth:
+                clothAnimator.runtimeAnimatorController=pieceAnimator;
+                break;
+            case CustomType.Hair:
+                hairAnimator.runtimeAnimatorController=pieceAnimator;
+                break;
+            case CustomType.Hat:
+                hatAnimator.runtimeAnimatorController=pieceAnimator;
+                break;
+        }
+        //animator[(int)type].runtimeAnimatorController=pieceAnimator;
+    }
     void Start()
     {
         
