@@ -831,7 +831,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_S (3)
+      name: walk_S (2)
       rect:
         serializedVersion: 2
         x: 128
@@ -852,7 +852,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_S (4)
+      name: walk_S (3)
       rect:
         serializedVersion: 2
         x: 192
@@ -873,7 +873,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_S (5)
+      name: walk_S (4)
       rect:
         serializedVersion: 2
         x: 256
@@ -894,7 +894,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_S (6)
+      name: walk_S (5)
       rect:
         serializedVersion: 2
         x: 320
@@ -1525,10 +1525,10 @@ TextureImporter:
       walk_N (5): -458631879
       walk_S (0): -2098296250
       walk_S (1): 1478197586
-      walk_S (3): -1809578559
-      walk_S (4): 86173866
-      walk_S (5): 1161632805
-      walk_S (6): 1643643922
+      walk_S (2): -1809578559
+      walk_S (3): 86173866
+      walk_S (4): 1161632805
+      walk_S (5): 1643643922
       walk_W (0): 439317440
       walk_W (1): -268947479
       walk_W (2): 1365754147
