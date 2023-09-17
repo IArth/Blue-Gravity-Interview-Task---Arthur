@@ -15,17 +15,19 @@ public class ShopManager : MonoBehaviour,IInteractable
     [SerializeField]
     private Player player;
     private List<ShopButton> buttons=new List<ShopButton>();
-    private Vector3 shopPanelScale=Vector3.one;
+    private Vector3 shopPanelScale;
     public Vector3 position => transform.position;
-
+    public bool imediate=>false;
     public void OnInteract()
     {
+        if(shopPanel.localScale!=Vector3.zero)return;
         shopPanelScale=Vector3.one;
         BuildMenu();
     }
     public void DeInteract()
     {
-        shopPanelScale=Vector3.one;
+        if(shopPanel.localScale!=Vector3.one)return;
+        shopPanelScale=Vector3.zero;
     }
     private void BuildMenu(){
         CustomPiece[] pieces=scriptable.GetPieces();
@@ -34,13 +36,14 @@ public class ShopManager : MonoBehaviour,IInteractable
         int count=0;
         foreach (CustomPiece piece in pieces)
         {
+            bool obtained=player.Obtained(piece.name),equiped=player.IsEquiped(piece.name);
             ShopButton button=Instantiate(buttomPrefab,shopPanel);
+            button.interactable=!equiped && (obtained || piece.price<=player.coins);
             button.onClick=()=>BuyPiece(piece);
-            button.interactable=player.Obtained(piece.name) || piece.price<=player.coins;
             button.pieceName=piece.name;
-            button.piecePrice=player.Obtained(piece.name)?"Equip":piece.price.ToString();
+            button.piecePrice=obtained?(equiped?"Equiped":"Equip"):piece.price.ToString();
             button.icon=piece.icon;
-            button.position=new Vector2(count%4*size.x,count/4*size.y);
+            button.position=new Vector2(count%4*size.x,count/4*-size.y);
             count++;
             buttons.Add(button);
         }
@@ -50,27 +53,34 @@ public class ShopManager : MonoBehaviour,IInteractable
         if(!player.Obtained(piece.name)){
             player.Obtain(piece.name);
             player.Spend(piece.price);
-            RefreshPrices();
             Debug.Log("Buying "+piece.name);
         }
         Debug.Log("Equiping "+piece.name);
-        player.EquipPiece(piece.pieceType,piece.animatorController);
+        player.EquipPiece(piece.pieceType,piece.animatorController,piece.name);
+        RefreshPrices();
     }
     private void RefreshPrices(){
         CustomPiece[] pieces=scriptable.GetPieces();
         for (int i = 0; i < pieces.Length; i++)
         {
-            buttons[i].interactable=player.Obtained(pieces[i].name) || pieces[i].price<=player.coins;
+            bool obtained=player.Obtained(pieces[i].name),equiped=player.IsEquiped(pieces[i].name);
+            buttons[i].interactable=!equiped && (obtained || pieces[i].price<=player.coins);
             buttons[i].pieceName=pieces[i].name;
-            buttons[i].piecePrice=player.Obtained(pieces[i].name)?"Equip":pieces[i].price.ToString();
+            buttons[i].piecePrice=obtained?(equiped?"Equiped":"Equip"):pieces[i].price.ToString();
         }
     }
     void Start()
     {
-        BuildMenu();
+        // BuildMenu();
     }
     void Update()
     {
-        shopPanel.localScale=Vector3.MoveTowards(shopPanel.localScale,shopPanelScale,Time.deltaTime/1f);
+        shopPanel.localScale=Vector3.MoveTowards(shopPanel.localScale,shopPanelScale,Time.deltaTime/.1f);
+        if(shopPanel.localScale==Vector3.zero){
+            for (int i = 1; i < shopPanel.childCount; i++)
+            {
+                Destroy(shopPanel.GetChild(1).gameObject);
+            }
+        }
     }
 }
