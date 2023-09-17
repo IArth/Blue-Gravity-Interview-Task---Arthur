@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -1460,6 +1460,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: icon_bald
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 485
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 231b1095ca2c525439560375a8a39e9b
+      internalID: -87923117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1499,6 +1520,7 @@ TextureImporter:
       char_a_p1_0bas_humn_v01_6: 1984666198
       char_a_p1_0bas_humn_v01_7: -1479694120
       char_a_p1_0bas_humn_v01_9: 566508327
+      icon_bald: -87923117
       idle_E: -1106894548
       idle_N: -368953994
       idle_S: 1949178380
