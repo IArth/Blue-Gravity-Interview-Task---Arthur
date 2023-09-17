@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Text coinsUI;
     // Animator[] animators;
-    public int coins{private set;get;}=1000;
+    public int coins{private set;get;}
     public float _coins;
     private HashSet<string> obtainedPieces=new HashSet<string>();
 #region Interactions - Made beforehand
@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         }
         //animator[(int)type].runtimeAnimatorController=pieceAnimator;
     }
-    public void GiveCoins(int amount)=>coins+=coins;
+    public void GiveCoins(int amount)=>coins+=amount;
     public void Obtain(string pieceName)=> obtainedPieces.Add(pieceName);
     public bool Obtained(string pieceName)=>obtainedPieces.Contains(pieceName);
     public bool IsEquiped(string pieceName)=>equipedClothes==pieceName || equipedHair==pieceName || equipedHat==pieceName;
