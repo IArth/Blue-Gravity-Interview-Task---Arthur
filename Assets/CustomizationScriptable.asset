@@ -18,13 +18,48 @@ MonoBehaviour:
     icon: {fileID: 1307245812, guid: 14ddd7d4b0b157e4982574459f630b5e, type: 3}
     animatorController: {fileID: 9100000, guid: 73f842103d7a93f49b22154f17c93eaa, type: 2}
     pieceType: 1
-  - name: Hair
-    price: 50
-    icon: {fileID: 228140629, guid: 2a1c9b3decc3c0b4fa3b0abf3003d120, type: 3}
+  - name: Bald
+    price: 0
+    icon: {fileID: -87923117, guid: 2e296e5f15314f1449c60067b105efbc, type: 3}
     animatorController: {fileID: 0}
     pieceType: 2
-  - name: Cloth
-    price: 100
-    icon: {fileID: -1291708082, guid: a2b08b705f6db784c8db419a35fdc71e, type: 3}
+  - name: No Hat
+    price: 0
+    icon: {fileID: -87923117, guid: 2e296e5f15314f1449c60067b105efbc, type: 3}
     animatorController: {fileID: 0}
+    pieceType: 3
+  - name: Blue Clothes
+    price: 120
+    icon: {fileID: 1107831852, guid: a2b08b705f6db784c8db419a35fdc71e, type: 3}
+    animatorController: {fileID: 9100000, guid: b54473afe72f2c94aa0cb72f8c3e6dc3, type: 2}
     pieceType: 1
+  - name: Orange Clothes
+    price: 100
+    icon: {fileID: -1833123239, guid: 3a8c1924ff0f3e447b124a9c0e8ceb44, type: 3}
+    animatorController: {fileID: 9100000, guid: c4f3ed201adbb344abe30a017d525ee2, type: 2}
+    pieceType: 1
+  - name: Underwear
+    price: 80
+    icon: {fileID: -1389133166, guid: 2b4e10f7bdc2d394db9bf458485fdf4d, type: 3}
+    animatorController: {fileID: 9100000, guid: 1891a6581999d6c4f94130ce0ab8d8a3, type: 2}
+    pieceType: 1
+  - name: Long hair
+    price: 150
+    icon: {fileID: -459896721, guid: 536a6e73bdb6aea4baffc756f60f8bbd, type: 3}
+    animatorController: {fileID: 9100000, guid: 627cec87dffedc6478a20ef45bd0aff8, type: 2}
+    pieceType: 2
+  - name: Short hair
+    price: 90
+    icon: {fileID: 433865595, guid: 2a1c9b3decc3c0b4fa3b0abf3003d120, type: 3}
+    animatorController: {fileID: 9100000, guid: 78fd16bece2d3084092540deb0713992, type: 2}
+    pieceType: 2
+  - name: Fluffy Hat
+    price: 150
+    icon: {fileID: 893017143, guid: 6b5c4f246e96f834e90261b8645cc0bd, type: 3}
+    animatorController: {fileID: 9100000, guid: 11f413fecd8360642b57341ffc2f963d, type: 2}
+    pieceType: 3
+  - name: Wizard Hat
+    price: 500
+    icon: {fileID: -1645236791, guid: 74e0011a4dc15d0499e9fe3977cbb891, type: 3}
+    animatorController: {fileID: 9100000, guid: 6c57df3cdb400f44a8ceb5222b476953, type: 2}
+    pieceType: 3
