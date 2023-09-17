@@ -81,6 +81,7 @@ public class ShopManager : MonoBehaviour,IInteractable
             {
                 Destroy(shopPanel.GetChild(1).gameObject);
             }
+            buttons.Clear();
         }
     }
 }
